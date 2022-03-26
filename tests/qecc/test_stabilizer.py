@@ -31,7 +31,7 @@ TEST_SET_ERROR_PROBABILITY_DATA = {
     "RESULT_P_BITWISE": [0.9, 0, 0.1],
     "P_IID": np.array([0.7, 0.1, 0.1, 0.1]),
     "TEST_CASE_P_IID": [[0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 1], [0, 1, 0, 0, 0, 0]],
-    "RESULT_P_IID": [(0.7**3), (0.7**2) * 0.1, (0.7**2) * 0.1],
+    "RESULT_P_IID": [(0.7 ** 3), (0.7 ** 2) * 0.1, (0.7 ** 2) * 0.1],
     "P_BLOCKWISE": np.random.rand(2 ** (2 * 3)),
     "TEST_CASE_P_BLOCKWISE": [
         [0, 0, 0, 0, 0, 0],
@@ -115,7 +115,7 @@ def test_FiveCode():
                 c.get_L(TEST_FIVE_DATA["L_ind"][l]) - np.array(TEST_FIVE_DATA["L"][l])
             )
         )
-    for beta in range(2**c.k):
+    for beta in range(2 ** c.k):
         assert 0 == sum(np.abs(c.get_syndrome({"E": c.get_L(beta)})))
 
 

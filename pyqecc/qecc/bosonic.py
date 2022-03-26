@@ -60,8 +60,8 @@ class GKP(CODE):
 
     def calc_llr(self, val, sigma):
         return np.log(
-            np.exp(-(val**2) / (2 * sigma**2))
-            / np.exp(-((np.sqrt(np.pi) - np.abs(val)) ** 2) / (2 * sigma**2))
+            np.exp(-(val ** 2) / (2 * sigma ** 2))
+            / np.exp(-((np.sqrt(np.pi) - np.abs(val)) ** 2) / (2 * sigma ** 2))
         )
 
     def analog_ML_decode(self, information):
@@ -73,7 +73,7 @@ class GKP(CODE):
         most_likely_error = np.zeros(self.n, dtype="i1")
         ma = self.START_MAX
 
-        for i in range(2 * 2**self.k):
+        for i in range(2 * 2 ** self.k):
             lt = self.code_instance.get_T(syndrome)
             for ii in range(2 * self.k):
                 lt ^= (1 & (i >> ii)) * self.code_instance.get_L(i)
@@ -100,7 +100,7 @@ class GKP(CODE):
         delta_m = information[1]
         error = np.zeros(self.n, dtype="i1")
         ma = self.START_MAX
-        for i in range(2 * 2**self.k):
+        for i in range(2 * 2 ** self.k):
 
             # About recovery opelator T
             lt = self.code_instance.get_T(syndrome)

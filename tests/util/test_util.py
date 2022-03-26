@@ -65,7 +65,7 @@ def test_arr2int():
 
 def test_int2arr():
     m = 5
-    for i in range(2**m):
+    for i in range(2 ** m):
         assert i == arr2int(int2arr(i, m))
 
 

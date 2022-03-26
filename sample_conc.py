@@ -4,7 +4,7 @@ NUM_OF_CONCATENATE = 3
 for num_of_concatenate in range(1, NUM_OF_CONCATENATE + 1):
     conc_code = [FiveCode()]
     for i in range(1, num_of_concatenate):
-        conc_code += [ParaCode([FiveCode() for i in range(5**i)])]
+        conc_code += [ParaCode([FiveCode() for i in range(5 ** i)])]
     my_code = ConcCode(conc_code)
     print(my_code)
     dec_sim(
